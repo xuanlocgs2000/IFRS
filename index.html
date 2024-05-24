@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFRS</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url("https://i.ibb.co/9GvN5bC/vk.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+      }
+      .container {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px 40px;
+        border-radius: 10px;
+        text-align: left;
+      }
+      h1 {
+        color: #fff;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        margin: 10px 0;
+      }
+      .vietnamese a {
+        text-decoration: none;
+        color: red;
+      }
+      .english a {
+        text-decoration: none;
+        color: yellow;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Danh sách các bài báo</h1>
+      <ul id="link-list"></ul>
+    </div>
+
+    <script>
+      // Mảng các URL tiếng Việt
+      const urlsVietnamese = [
+        { url: "https://s.net.vn/fune", text: "ĐH Mở" },
+        {
+          url: "https://thoibaotaichinhvietnam.vn/ap-dung-ifrs-cho-doanh-nghiep-hang-tieu-dung-tai-viet-nam-khac-biet-nam-o-dau-112316.html",
+          text: "Thời báo tài chính",
+        },
+        {
+          url: "https://tapchicongthuong.vn/lo-trinh-va-giai-phap-ap-dung-chuan-muc-ke-toan-quoc-te-trong-thuc-te-tai-viet-nam-87516.html",
+          text: "Tạp chí công thương",
+        },
+
+        {
+          url: "https://s.net.vn/FdJf",
+          text: "BÁO CÁO KẾT QUẢ KHẢO SÁT Mức độ sẵn sàng áp dụng IFRS của doanh nghiệp tại Việt Nam",
+        },
+        { url: "https://s.net.vn/fq11", text: "Lộ trình phát triển" },
+        {
+          url: "https://tapchitaichinh.vn/ap-dung-chuan-muc-bao-cao-tai-chinh-quoc-te-tai-viet-nam-vuong-mac-va-de-xuat-giai-phap.html",
+          text: "Vướng mắc giải pháp",
+        },
+        {
+          url: "https://tapchitaichinh.vn/de-ap-dung-chuan-muc-bao-cao-tai-chinh-quoc-te-thanh-cong-trong-doanh-nghiep-viet-nam.html",
+          text: "Áp dụng thành công",
+        },
+        {
+          url: "https://s.net.vn/2Y8n",
+          text: "Ảnh hưởng của việc áp dụng chuẩn mực báo cáo tài chính quốc tế",
+        },
+      ];
+
+      // Mảng các URL tiếng Anh
+      const urlsEnglish = [
+        {
+          url: "https://s.net.vn/wmXr",
+          text: "THE EFFECTS OF MANAGEMENT CHARACTERISTICS ON THE ADOPTIONOF INTERNATIONAL FINANCIAL REPORTING STANDARDS FOR SMALLAND MEDIUM-SIZED ENTERPRISES ",
+        },
+        {
+          url: "https://www.sciencedirect.com/topics/social-sciences/international-financial-reporting-standards",
+          text: "International Financial Reporting Standards",
+        },
+        {
+          url: "https://s.net.vn/KMUp",
+          text: "INVESTIGATING THE FACTORS AFFECT MANAGERIAL READINESS TO ADOPT IFRS IN COMPANIES LISTED ON THE TSE",
+        },
+        { url: "https://s.net.vn/Blz5", text: "Download" },
+        {
+          url: "https://js.vnu.edu.vn/EAB/article/view/4499",
+          text: "VNU download",
+        },
+        { url: "https://s.net.vn/ZyAb", text: "Effect" },
+        {
+          url: "https://files.eric.ed.gov/fulltext/EJ1258948.pdf",
+          text: "Factors Affecting the Understanding of IFRS in Accounting Students",
+        },
+      ];
+
+      // Lấy phần tử ul từ DOM
+      const linkList = document.getElementById("link-list");
+
+      // Hàm để tạo và chèn các thẻ a vào ul với class cụ thể
+      function renderLinks(urls, className) {
+        urls.forEach((item) => {
+          const li = document.createElement("li");
+          li.classList.add(className);
+          const a = document.createElement("a");
+          a.href = item.url;
+          a.target = "_blank";
+          a.textContent = item.text;
+          li.appendChild(a);
+          linkList.appendChild(li);
+        });
+      }
+
+      // Render các liên kết
+      renderLinks(urlsVietnamese, "vietnamese");
+      renderLinks(urlsEnglish, "english");
+    </script>
+  </body>
+</html>
